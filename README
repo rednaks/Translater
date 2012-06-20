@@ -1,1 +1,28 @@
-empty
+This project is an application using the Alex Bm API (Google translate alternative API) uploaded in the github 
+https://github.com/njaguard/Translater
+
+Required :
+	make sure to install libcure
+	if you are under Ubuntu please check the existance of this library with this command :
+----->
+
+	pkg-config --list-all | grep -i curl
+
+----->
+	if there is no result please install the paquage with this command :
+----->
+
+	apt-get install libcurl
+	
+----->	
+
+Compilation :
+
+run this command before execution 
+----->
+
+	make
+
+----->	
+		
+ENJOY !	
