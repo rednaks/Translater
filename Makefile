@@ -1,16 +1,20 @@
 obj = bin/obj
 src = src
 bin = bin
-
+init = mkdir -p bin/obj
+debug = 
+flags = -Wall -O3 $(debug)
 
 translater : functions.o main.o
-	gcc $(obj)/functions.o $(obj)/main.o -o $(bin)/translater
+	gcc $(flags) $(obj)/functions.o $(obj)/main.o -o $(bin)/translater
 	
 functions.o : $(src)/functions.c $(src)/functions.h
-	gcc -c $(src)/functions.c -o $(obj)/functions.o
+	$(init)
+	gcc $(flags) -c $(src)/functions.c -o $(obj)/functions.o
 
 main.o : $(src)/functions.h  $(src)/main.c
-	gcc -c $(src)/main.c -o $(obj)/main.o
+	$(init)
+	gcc -c $(flags) $(src)/main.c -o $(obj)/main.o
 
 clean :
 	rm $(obj)/*.o
