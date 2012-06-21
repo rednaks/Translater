@@ -2,8 +2,11 @@
 
 int main(int argc,char *argv[]) {
 
-	if (argc !=1) {
-		translate(argv[1]);
+	if (argc > 1) {
+		while(argc > 1){
+		translate(argv[argc-1]);
+		argc--;
+		}
 	}else
 	{
 		char *text=NULL;
