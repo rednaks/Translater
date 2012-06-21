@@ -8,4 +8,5 @@
 
 void translate(char *);
 void getLine(char *);
+void urlEncode(char *);
 #endif

@@ -4,6 +4,7 @@ void translate(char *s) {
 
 	CURL *handle=curl_easy_init();
 	char url[2000]={'\0'};
+	urlEncode(s);
 	sprintf(url,"%s%s","http://rednaks.alwaysdata.net/translate/?text=",s);
 	if (handle){
 
@@ -28,4 +29,19 @@ void getLine(char *stream)
 		stream[i++]=c;
 	}
 		stream[i]='\0';
+}
+
+/*Very basic url Encoding, Only spaces are supported now
+feel free to hack
+*/
+void urlEncode(char *str)
+{
+	int l = strlen(str);
+	int i;
+	for(i=0;i<l;i++)
+	{
+		if(str[i]==' ')
+			str[i]='+';
+	}
+
 }

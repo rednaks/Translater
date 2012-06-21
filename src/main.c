@@ -6,7 +6,6 @@ int main(int argc,char *argv[]) {
 	text = (char *)malloc(sizeof(char)*100);
 	printf("Give a text to translate : \n");
 	getLine(text);
-	printf("DEBUG : %s\n",text);
 	translate(text);
 	free(text);
 	return 0;
