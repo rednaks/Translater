@@ -7,4 +7,5 @@
 
 
 void translate(char *);
+void getLine(char *);
 #endif

@@ -17,3 +17,15 @@ void translate(char *s) {
 		printf("erreur lors de l'initialisation de la fonction curl_easy_init()\n");
 		
 }
+
+/* To be able to get The entire line, scanf cant to it very well*/
+void getLine(char *stream)
+{
+	int i=0;
+	char c;
+	while((c = getchar())!='\n')
+	{
+		stream[i++]=c;
+	}
+		stream[i]='\0';
+}
