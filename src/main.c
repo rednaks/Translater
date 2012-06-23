@@ -3,9 +3,15 @@
 int main(int argc,char *argv[]) {
 
 	if (argc > 1) {
+		
+		if(verif(argv,argc)){
+		printHelp();
+		}else{
 		while(argc > 1){
+		if(!optionT(argv[argc-1]))
 		translate(argv[argc-1]);
 		argc--;
+		}
 		}
 	}else
 	{

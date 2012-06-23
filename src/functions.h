@@ -9,4 +9,8 @@
 void translate(char *);
 void getLine(char *);
 void urlEncode(char *);
+int optionHelp(char *);
+int verif(char *[],int);
+int optionT(char *);
+void printHelp();
 #endif
