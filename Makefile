@@ -22,3 +22,7 @@ $(obj)/main.o : $(src)/functions.h  $(src)/main.c
 clean :
 	@echo "\033[31mCleaning all\033[0m"
 	@rm $(obj)/*.o $(bin)/translater
+
+install:
+	@echo "\033[1mInstalling ...\033[0m"
+	@install $(bin)/translater /usr/bin/
