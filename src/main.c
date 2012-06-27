@@ -7,11 +7,11 @@ int main(int argc,char *argv[]) {
 		if(verif(argv,argc)){
 		printHelp();
 		}else{
-		while(argc > 1){
-		if(!optionT(argv[argc-1]))
-		translate(argv[argc-1]);
-		argc--;
-		}
+			int i=1;
+			while(argc > i){
+			if(!optionT(argv[i]))
+			translate(argv[i++]);
+			}
 		}
 	}else
 	{
