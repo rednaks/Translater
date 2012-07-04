@@ -13,4 +13,9 @@ int optionHelp(char *);
 int verif(char *[],int);
 int optionT(char *);
 void printHelp();
+/**************************************************/
+int optionLang(char *);
+int langExist(char *); 
+/**************************************************/
+
 #endif

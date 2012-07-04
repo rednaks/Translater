@@ -1,16 +1,24 @@
 #include"functions.h"
-
+ 
 int main(int argc,char *argv[]) {
 
 	if (argc > 1) {
-		
-		if(verif(argv,argc)){
-		printHelp();
-		}else{
-			int i=1;
-			while(argc > i){
+		int v = verif(argv,argc);
+		if(v==1)
+		{
+			printHelp();
+		}
+		else if (v==2)
+		{
+			printf("Translate to specific lang\n");
+		}
+		else if (v==3)
+			printf("Error lang\n");
+		else{
+			int i=0;
+			while(argc > ++i){
 			if(!optionT(argv[i]))
-			translate(argv[i++]);
+			translate(argv[i]);
 			}
 		}
 	}else

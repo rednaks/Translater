@@ -1,5 +1,6 @@
 #include"functions.h"
 
+char *lang[]={"ar","fr", "en"};
 void translate(char *s) {
 
 	CURL *handle=curl_easy_init();
@@ -56,12 +57,45 @@ int optionHelp (char* s) {
 	}
 }
 
-int verif (char *tab[],int n) {
+/*********************************************/
+/*				/!\ALPHA/!\					 */
+/*			   Experimental !				 */
+int optionLang (char *s){
 
+	if(!strncmp(s,"--lang=",7))
+	{
+		if(langExist(s))
+			return 1;
+		else
+			return 0;
+	}else
+		return -1;
+}
+
+int langExist(char *s){
+	if(strlen(s)==9)
+	{	
+		char l[]={s[7],s[8]};
+		printf("DEBUG : l[] = %s\n",l);
+		for(int i=0;i<3;i++)
+		{
+			if(!strcmp(l,lang[i]));
+				return 1;
+		}
+		return 0;
+	}else 
+		return 0;
+
+}
+/*********************************************/
+int verif (char *tab[],int n) {
 	int i;
 	for(i=0;i<n;i++)
 		{
 			if(optionHelp(tab[i])) return 1;
+			int opL = optionLang(tab[i]);
+			if(opL==1) return 2;
+			else if(opL==0) return 3;
 		}
 	return 0;
 
