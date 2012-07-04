@@ -5,6 +5,8 @@ init = mkdir -p bin/obj
 debug = 
 flags = -Wall -O3 -lcurl  $(debug)
 
+all: $(bin)/translater
+
 $(bin)/translater : $(obj)/functions.o $(obj)/main.o
 	@echo "\033[1m[CC]\033[0m translater"
 	@gcc $(obj)/functions.o $(obj)/main.o -o $(bin)/translater $(flags)
@@ -23,6 +25,6 @@ clean :
 	@echo "\033[31mCleaning all\033[0m"
 	@rm $(obj)/*.o $(bin)/translater
 
-install:
+install: all
 	@echo "\033[1mInstalling ...\033[0m"
 	@install $(bin)/translater /usr/bin/
