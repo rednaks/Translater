@@ -5,7 +5,7 @@ void translate(char *s) {
 	CURL *handle=curl_easy_init();
 	char url[2000]={'\0'};
 	urlEncode(s);
-	sprintf(url,"%s%s","http://rednaks.alwaysdata.net/translate/?text=",s);
+	sprintf(url,"%s%s","http://translate.rednaks.tn/?text=",s);
 	if (handle){
 
 		curl_easy_setopt(handle,CURLOPT_URL,url);
